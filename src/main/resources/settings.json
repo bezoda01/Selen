@@ -1,0 +1,13 @@
+{
+  "browserName": "chrome",
+  "chrome": {
+    "incognito": "true",
+    "headless": "false",
+    "fullScreen": "true"
+  },
+  "firefox": {
+    "incognito": "true",
+    "headless": "false",
+    "maximized": "true"
+  }
+}
