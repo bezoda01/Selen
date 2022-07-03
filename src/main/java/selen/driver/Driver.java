@@ -1,12 +1,14 @@
-package base.driver;
+package selen.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import java.time.Duration;
 
-import static base.Loggerr.*;
-import static base.Settings.*;
+import static selen.Loggerr.*;
+import static selen.settings.Settings.settings;
+import static selen.settings.Settings.timeouts;
 
 public class Driver {
 
@@ -15,6 +17,9 @@ public class Driver {
     public static WebDriver getDriver() {
         if (driver == null) {
             driver = getInstance();
+            if((Long) timeouts.get("timeoutImplicit") > 0) {
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds((Long) timeouts.get("timeoutImplicit")));
+            }
         }
         return driver;
     }

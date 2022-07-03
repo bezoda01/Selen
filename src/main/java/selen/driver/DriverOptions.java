@@ -1,4 +1,4 @@
-package base.driver;
+package selen.driver;
 
 import org.json.simple.JSONObject;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,9 +7,9 @@ import org.openqa.selenium.remote.AbstractDriverOptions;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static base.Settings.*;
+import static selen.settings.Settings.*;
 import static utils.JsonUtils.JSONObjectToMap;
-import static base.Loggerr.*;
+import static selen.Loggerr.*;
 
 public class DriverOptions {
 
